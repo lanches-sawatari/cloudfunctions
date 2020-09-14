@@ -1,4 +1,4 @@
-module github.com/lanches-sawatari/errorreporting_wrap
+module github.com/lanches-sawatari/cloudfunctions/errorreporting_wrap
 
 go 1.13
 
