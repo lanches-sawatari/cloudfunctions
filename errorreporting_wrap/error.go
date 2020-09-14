@@ -30,10 +30,12 @@ func (c Client) Log(msg string, err error) {
 func (c Client) Report(msg string, err error) {
 	c.Log(msg, err)
 	c.errorReportingClient.Report(errorreporting.Entry{Error: err})
-	c.errorReportingClient.Flush()
 }
 
 func (c Client) ReportWithoutLog(err error) {
 	c.errorReportingClient.Report(errorreporting.Entry{Error: err})
-	c.errorReportingClient.Flush()
+}
+
+func (c Client) Close() {
+	c.errorReportingClient.Close()
 }
